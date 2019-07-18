@@ -1485,7 +1485,7 @@ $.extend(Selectize.prototype, {
 			var i, active, value_next, wasFull;
 			value = hash_key(value);
 
-			if (self.items.indexOf(value) !== -1) {
+			if (!self.settings.allowDuplicates && self.items.indexOf(value) !== -1) {
 				if (inputMode === 'single') self.close();
 				return;
 			}
